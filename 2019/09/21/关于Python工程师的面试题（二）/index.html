@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="InnerPeace's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="1此文可能有上一篇文章中重复内容  args, *kwargs是什么意思?*args: 可变位置参数。*kwargs: 可变关键字参数。 谈一谈Python中的装饰器Python中的装饰器其实也是一种函数， 它可以在不修改原函数代码情况下扩展原函数功能。装饰器函数与普通函数不同之处就在于装饰器函数返回了一个函数对象，装饰器利用了闭包的原理来实现。主要用于日志插入，权限管理等等。 Python的垃圾">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Python工程师的面试题（二）">
+<meta property="og:url" content="http://yoursite.com/2019/09/21/关于Python工程师的面试题（二）/index.html">
+<meta property="og:site_name" content="InnerPeace&#39;s Blog">
+<meta property="og:description" content="1此文可能有上一篇文章中重复内容  args, *kwargs是什么意思?*args: 可变位置参数。*kwargs: 可变关键字参数。 谈一谈Python中的装饰器Python中的装饰器其实也是一种函数， 它可以在不修改原函数代码情况下扩展原函数功能。装饰器函数与普通函数不同之处就在于装饰器函数返回了一个函数对象，装饰器利用了闭包的原理来实现。主要用于日志插入，权限管理等等。 Python的垃圾">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-21T06:59:39.708Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于Python工程师的面试题（二）">
+<meta name="twitter:description" content="1此文可能有上一篇文章中重复内容  args, *kwargs是什么意思?*args: 可变位置参数。*kwargs: 可变关键字参数。 谈一谈Python中的装饰器Python中的装饰器其实也是一种函数， 它可以在不修改原函数代码情况下扩展原函数功能。装饰器函数与普通函数不同之处就在于装饰器函数返回了一个函数对象，装饰器利用了闭包的原理来实现。主要用于日志插入，权限管理等等。 Python的垃圾">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/21/关于Python工程师的面试题（二）/">
+
+
+
+
+
+  <title>关于Python工程师的面试题（二） | InnerPeace's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">InnerPeace's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">做自己的太阳</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/关于Python工程师的面试题（二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.Tian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://q1.qlogo.cn/g?b=qq&nk=945153590&s=5">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="InnerPeace's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">关于Python工程师的面试题（二）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-21T14:43:21+08:00">
+                2019-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">此文可能有上一篇文章中重复内容</span><br></pre></td></tr></table></figure>
+
+<h3 id="args-kwargs是什么意思"><a href="#args-kwargs是什么意思" class="headerlink" title="args, *kwargs是什么意思?"></a><em>args, *</em>kwargs是什么意思?</h3><p>*args: 可变位置参数。<br>*kwargs: 可变关键字参数。</p>
+<h3 id="谈一谈Python中的装饰器"><a href="#谈一谈Python中的装饰器" class="headerlink" title="谈一谈Python中的装饰器"></a>谈一谈Python中的装饰器</h3><p>Python中的装饰器其实也是一种函数， 它可以在不修改原函数代码情况下扩展原函数功能。装饰器函数与普通函数不同之处就在于装饰器函数返回了一个函数对象，装饰器利用了闭包的原理来实现。主要用于日志插入，权限管理等等。</p>
+<h3 id="Python的垃圾回收机制以及内存管理"><a href="#Python的垃圾回收机制以及内存管理" class="headerlink" title="Python的垃圾回收机制以及内存管理"></a>Python的垃圾回收机制以及内存管理</h3><p>垃圾回收机制：<br>Python的垃圾回收机制以引用计数为主， 标记清除、分代回收为辅。引用计数指：Python在内部维护了针对每一个对象的引用计数， 当一个对象创建或者被引用时，其引用计数将加1，当一个对象被销毁或作用域失效时， 其引用计数将减1。只有对象的引用计数为0时，这个对象将会被回收。引用计数的优点：简单、具有实时性。缺点：对象循环引用时将永远不会被销毁。对于对象循环引用的状况Python使用标记清除来解决，Python在内部实现了一个循环检测器， 不停的检测对象是否存在循环引用，如果两个对象互相循环引用并且不包含其他第三者对象时， 其将会被收回。在Python参考手册中有写道：当一个对象无法获取时， 那么这个对象有可能被当成垃圾销毁了。Python将所有对象分成了三代， 对象存活时间越长就越晚被回收， 反之则越早被回收。<br>内存管理：<br>Python使用了内存池机制来管理内存，其内存以金字塔的形式对内存功能进行划分，-1、-2层主要用于对操作系统进行操作， 0层中是C的malloc,、free等等内存分配和释放函数。1、2层是一个内存池， 当对象小于265K时将直接由这片内存池进行分配内存，否则将调用第0层中的C函数来分配内存，当小于265K的对象被销毁时， 其内存也不会被销毁， 只是返回给了内存池以便二次利用。2层是对Python对象进行操作。</p>
+<h3 id="Python多线程"><a href="#Python多线程" class="headerlink" title="Python多线程"></a>Python多线程</h3><p>Python中多线程由于有GIL的影响， 导致在任意时间内只有一个线程在运行，所以Python的多线程在处理计算密集型任务上效果反而不如单线程， 只有在处理IO密集型任务上多线程才能发挥实力，在等待IO过程中Python C源码会释放GIL， 最终会导致线程在等待IO过程中会被暂停去执行其他的线程。python中GIL主要是由于历史原因导致Cpython虚拟机中的GIL难以移除，同时GIL的存在保证了多线程之间数据完整性以及状态同步。</p>
+<h3 id="说明os、sys模块不同，并列举常用的模块方法"><a href="#说明os、sys模块不同，并列举常用的模块方法" class="headerlink" title="说明os、sys模块不同，并列举常用的模块方法"></a>说明os、sys模块不同，并列举常用的模块方法</h3><p>os: 提供了对使用操作系统函数的高度封装<br>sys: 提供由解释器访问或者维护的变量以及与解释器交互的一些函数</p>
+<p>os模块只负责程序与操作系统交互， 提供了访问操作系统底层的接口封装。<br>sys模块负责程序与解释器交互， 提供了一系列的函数用于操控Python运行的环境设置。</p>
+<p>os模块常用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">os.getcwd() # 获取当前运行路径</span><br><span class="line">os.remove() # 删除指定的文件</span><br><span class="line">os.walk() # 生成指定目录下的文件夹以及文件</span><br><span class="line">os.makedirs() # 生成多成目录</span><br><span class="line">os.mkdir() # 生成目录</span><br><span class="line">os.rmdir() # 删除指定目录</span><br><span class="line">os.removedir() # 删除多层目录</span><br><span class="line">os.listdir() # 列出指定目录下所有的文件夹以及文件</span><br><span class="line">os.path.join() # 将分离的各部分组合成一个路径名</span><br><span class="line">os.path.getsize() # 获取指定文件大小</span><br><span class="line">os.path.exists() # 查看指定目录或者文件是否存在</span><br><span class="line">os.path.isabs() # 查看指定目录是否为绝对路径</span><br></pre></td></tr></table></figure>
+
+<p>sys模块常用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sys.argv # 命令行参数列表</span><br><span class="line">sys.exit() # 退出程序并返回指定的整数</span><br><span class="line">sys.maxunicode # 最大的Unicode值</span><br><span class="line">sys.modules # 系统导入的模块名称</span><br><span class="line">sys.path # python搜索模块时的路径</span><br><span class="line">sys.stdout # 标准输出</span><br><span class="line">sys.stdin # 标准输入</span><br><span class="line">sys.stderr # 错误输出</span><br></pre></td></tr></table></figure>
+
+<h3 id="什么是lambda表达式？它有什么好处？"><a href="#什么是lambda表达式？它有什么好处？" class="headerlink" title="什么是lambda表达式？它有什么好处？"></a>什么是lambda表达式？它有什么好处？</h3><p>lambda也是函数的一种， 在处理一些简单的操作时可以使用该表达式， 其好处是不用为一些实现简单功能的函数命名，毕竟编程只有两个难点： 缓存失效， 命名。</p>
+<h3 id="Python里面如何拷贝一个对象？"><a href="#Python里面如何拷贝一个对象？" class="headerlink" title="Python里面如何拷贝一个对象？"></a>Python里面如何拷贝一个对象？</h3><p>Python中拷贝分为深拷贝、浅拷贝。浅拷贝只拷贝父级对象， 不会拷贝对象内部的子对象，使用copy模块中的copy。深拷贝则会完全拷贝父对象以及子对象， 使用copy模块中的deepcopy。</p>
+<h3 id="new和init的区别"><a href="#new和init的区别" class="headerlink" title="new和init的区别"></a><strong>new</strong>和<strong>init</strong>的区别</h3><p><strong>new</strong>负责构建一个类对象并将其返回，<strong>init</strong>则负责初始化一些变量，不返回任何对象。在实例化一个类时， <strong>new</strong>方法将会先被运行， 其次才运行<strong>init</strong>方法。</p>
+<h3 id="python中协程？"><a href="#python中协程？" class="headerlink" title="python中协程？"></a>python中协程？</h3><p>Python中协程最初使用yield来实现， 当程序运行到yield语句时就会将控制权交出来去执行其他的函数， 在Python3之前只能通过原生yield、greenlet以及Gevent第三方库来实现协程， 在Python3 之后引入了yield from， yield from 用于重构生成器。在Python3.5之后引用了async和await， 其作为yield from， yield的完美替身来实现协程。</p>
+<h3 id="Python的异常机制"><a href="#Python的异常机制" class="headerlink" title="Python的异常机制?"></a>Python的异常机制?</h3><p>Python中异常也是一个对象， 所有的异常的基类都是Exception。捕获异常使用try…except….语法，如果要try与except之间的代码出现了错误并且我们将其异常类型捕获了那么代码将会跳转代except中去执行。还可以使用raise 去手动的触发一个错误，也可以使用assert来触发异常， 只不过assert经常用来在测试中， 并且assert对程序的性能有着极大影响，只有内置的<strong>debug</strong>为True时assert才会执行。</p>
+<h3 id="python旧式类-经典类-和新式类的区别"><a href="#python旧式类-经典类-和新式类的区别" class="headerlink" title="python旧式类(经典类)和新式类的区别"></a>python旧式类(经典类)和新式类的区别</h3><p>经典类与新式类的区别是：继承搜索的顺序发生了改变，经典类多继承搜索顺序是深度优先， 按照从左至右的查找，并且将每一个父类的基类都查找一遍。新式类则是， 先从左至右的查找， 然后再向每一个父类的基类进行查找。（都是从左至右的顺序查找， 经典类查找一个父类时同时向上查找，新式类则是先查找所有的父类然后再向上查找）</p>
+<h3 id="classmethod，staticmethod，property是什么？有什么作用？"><a href="#classmethod，staticmethod，property是什么？有什么作用？" class="headerlink" title="classmethod，staticmethod，property是什么？有什么作用？"></a>classmethod，staticmethod，property是什么？有什么作用？</h3><p>classmethod，staticmethod，property都是装饰器， 他们都作用在类的方法上。classmethod：使得被装饰的方法成为一个类方法既不需要实例化类就可以直接调用的方法，第一个参数为cls。 staticmethod： 使得被装饰的方法成为一个静态函数既与普通的函数无区别。property: 将一个方法变成一个属性来使用。</p>
+<h3 id="python中的绑定方法和未绑定方法是什么"><a href="#python中的绑定方法和未绑定方法是什么" class="headerlink" title="python中的绑定方法和未绑定方法是什么"></a>python中的绑定方法和未绑定方法是什么</h3><p>绑定方法：绑定了实例化的方法既第一个参数是self<br>未绑定方法：没有绑定实例化的方法既类方法、静态方法</p>
+<h3 id="python上下文管理器是什么？"><a href="#python上下文管理器是什么？" class="headerlink" title="python上下文管理器是什么？"></a>python上下文管理器是什么？</h3><p>Python中上下文管理器使用with来调用主要用于数据库连接，文件操作， 网络操作。其作用是： 如果在进行一些打开资源操作时出现了异常，上下文管理器将会自动的执行一些资源清理操作。在进入上下文管理器时， Python会先调用对象的<strong>enter</strong>方法， 该方法返回一个对象用于进行一些操作，如果在进行一些操作时发生了异常Python则调用<strong>exit</strong>该对象接受三个参数第一个参数异常类，第二个参数异常提示字符串， 第三个参数traceback对象。</p>
+<h3 id="functools的wraps是做什么的？"><a href="#functools的wraps是做什么的？" class="headerlink" title="functools的wraps是做什么的？"></a>functools的wraps是做什么的？</h3><p>wraps是一个装饰器功能是： 由于被装饰的函数传入到装饰器中时已经不是原函数了， 而是一个新的函数， 并且丢失一些原函数的属性， 为了不影响函数的使用， 可以使用wraps来抵消这种副作用。</p>
+<h3 id="请说一说ORM实现原理"><a href="#请说一说ORM实现原理" class="headerlink" title="请说一说ORM实现原理"></a>请说一说ORM实现原理</h3><p>ORM使用了Python的属性描述符协议实现，通过另外一个类来描述类变量的属性类型， 再给这个属性进行赋值时（对应数据库中的字段名称）会调用<strong>set</strong>方法，访问属性则会调用<strong>get</strong>方法删除则调用<strong>delete</strong>方法。</p>
+<h3 id="请说一说迭代器和生成器区别"><a href="#请说一说迭代器和生成器区别" class="headerlink" title="请说一说迭代器和生成器区别?"></a>请说一说迭代器和生成器区别?</h3><p>生成器时一种特殊的迭代器， 生成器自动实现了迭代器协议， 不需要手动的实现<strong>iter</strong>以及next方法，生成器在迭代的过程中可以改变当前的迭代值， 而普通的迭代器改变当前值时往往会发生错。迭代器必须实现<strong>iter</strong>以及next方法。</p>
+<h3 id="描述一下type-的作用"><a href="#描述一下type-的作用" class="headerlink" title="描述一下type()的作用"></a>描述一下type()的作用</h3><p>当type只传入一个参数时将返回该参数的类型，如果传入了三个参数则返回一个类对象，同时Python中的所有类的基类都是type</p>
+<h3 id="Python中列表与元组的异同？"><a href="#Python中列表与元组的异同？" class="headerlink" title="Python中列表与元组的异同？"></a>Python中列表与元组的异同？</h3><p>相同： 列表和元组都是容器并且是可迭代对象，二者可以包含任意类型的对象。<br>不同：列表是可变的， 元组是不可变。</p>
+<h3 id="Python中的列表是如何实现的？"><a href="#Python中的列表是如何实现的？" class="headerlink" title="Python中的列表是如何实现的？"></a>Python中的列表是如何实现的？</h3><p>Python中的列表使用了分离式技术实现的动态顺序表。</p>
+<h3 id="Python中列表的索引查询的时间复杂度是多少？"><a href="#Python中列表的索引查询的时间复杂度是多少？" class="headerlink" title="Python中列表的索引查询的时间复杂度是多少？"></a>Python中列表的索引查询的时间复杂度是多少？</h3><p>O(1)</p>
+<h3 id="Python字典的实现原理？"><a href="#Python字典的实现原理？" class="headerlink" title="Python字典的实现原理？"></a>Python字典的实现原理？</h3><p>Python的字典使用了哈希表来储存key、value,当添加一个数据时首先会把key通过哈希函数转换成一个数字， 然后将该数字对存放value的数组长度取余并将取余结果当做数组的下标， 将value存放在该取余结果为下标的数组中。数据查询时将key转换为对应的数组下标，并定位到数组的位置获取value。</p>
+<h3 id="什么是pickling和unpickling？"><a href="#什么是pickling和unpickling？" class="headerlink" title="什么是pickling和unpickling？"></a>什么是pickling和unpickling？</h3><p>Pickle模块读入任何Python对象，将它们转换成字符串，然后使用dump函数将其转储到一个文件中——这个过程叫做pickling，反之从存储的字符串文件中提取原始Python对象的过程，叫做unpickling。</p>
+<h3 id="有哪些工具可以帮助debug或做静态分析？"><a href="#有哪些工具可以帮助debug或做静态分析？" class="headerlink" title="有哪些工具可以帮助debug或做静态分析？"></a>有哪些工具可以帮助debug或做静态分析？</h3><p>PyChecker是一个静态分析工具，它不仅能报告源代码中的错误，并且会报告错误类型和复杂度。<br>Pylint是检验模块是否达到代码标准的另一个工具。<br>dis用来查看Python对象的字节码。</p>
+<h3 id="Python中的作用域？"><a href="#Python中的作用域？" class="headerlink" title="Python中的作用域？"></a>Python中的作用域？</h3><p>在Python中，一个对象的作用于总是由代码被赋值的地方所决定的。当遇见一个变量时Python会按照： 本地作用域→ 当前作用域被嵌入的本地作用域→ 全局/模块作用域→ 内置作用域顺序搜索。</p>
+<h3 id="Python的参数传递是值传递还是引用传递？"><a href="#Python的参数传递是值传递还是引用传递？" class="headerlink" title="Python的参数传递是值传递还是引用传递？"></a>Python的参数传递是值传递还是引用传递？</h3><p>可变对象使用引用传递， 不可变对象使用值传递</p>
+<h3 id="写一个函数-输入一个字符串-返回倒序排列的结果"><a href="#写一个函数-输入一个字符串-返回倒序排列的结果" class="headerlink" title="写一个函数, 输入一个字符串, 返回倒序排列的结果"></a>写一个函数, 输入一个字符串, 返回倒序排列的结果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def reverse(text):</span><br><span class="line">    return text[::-1]</span><br></pre></td></tr></table></figure>
+
+<h3 id="python中is和-的区别"><a href="#python中is和-的区别" class="headerlink" title="python中is和==的区别"></a>python中is和==的区别</h3><p>is比较的是对象在内存的地址， ==比较的对象中的值</p>
+<h3 id="什么是Python的闭包？"><a href="#什么是Python的闭包？" class="headerlink" title="什么是Python的闭包？"></a>什么是Python的闭包？</h3><p>内层函数引用了其外部作用域的变量，然后返回内层函数的情况，称为闭包，创建一个闭包必须满足以下几点:</p>
+<ol>
+<li>必须有一个内嵌函数</li>
+<li>内嵌函数必须引用外部函数中的变量，外层空间中被引用的变量叫做层函数的环境变量</li>
+<li>外部函数的返回值必须是内嵌函数</li>
+<li>环境变量和内层非全局函数一起构成了闭包</li>
+</ol>
+<h3 id="Python的自省"><a href="#Python的自省" class="headerlink" title="Python的自省?"></a>Python的自省?</h3><p>type()，dir()，getattr()，hasattr()，isinstance()</p>
+<h3 id="Python并发的解决方案"><a href="#Python并发的解决方案" class="headerlink" title="Python并发的解决方案"></a>Python并发的解决方案</h3><p>Twisted是一个事件驱动型的网络引擎，不同于单线程和多线程模式，这种模式不需要过多去关心线程锁的问题，当遇到高并发问题时候，采用twisted会很好解决数据共享的问题。Tornado既是一个web server，也是web framework。就是说这个web框架有自己内置的web server，在写web时候可以用到它的高性能网络库，甚至有公司拿这个来做游戏的服务器，可以用它处理高并发问题。Gevent是基于协程的Python网络库，基于libev的快速事件循环，基于greenlet的轻量级执行单元，API的概念和Python标准库一致。sanic基于uvloop和httptools实现高并发异步网络框架</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/20/关于Python工程师的面试题（一）/" rel="next" title="关于Python工程师的面试题（一）">
+                <i class="fa fa-chevron-left"></i> 关于Python工程师的面试题（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/21/关于Python工程师的面试题（三）/" rel="prev" title="关于Python工程师的面试题（三）">
+                关于Python工程师的面试题（三） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://q1.qlogo.cn/g?b=qq&nk=945153590&s=5" alt="Mr.Tian">
+            
+              <p class="site-author-name" itemprop="name">Mr.Tian</p>
+              <p class="site-description motion-element" itemprop="description">向上向善 希望才会源源不断</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/945153590" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/fd83302a9a18" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-globe"></i>简书</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#args-kwargs是什么意思"><span class="nav-number">1.</span> <span class="nav-text">args, *kwargs是什么意思?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谈一谈Python中的装饰器"><span class="nav-number">2.</span> <span class="nav-text">谈一谈Python中的装饰器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python的垃圾回收机制以及内存管理"><span class="nav-number">3.</span> <span class="nav-text">Python的垃圾回收机制以及内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python多线程"><span class="nav-number">4.</span> <span class="nav-text">Python多线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明os、sys模块不同，并列举常用的模块方法"><span class="nav-number">5.</span> <span class="nav-text">说明os、sys模块不同，并列举常用的模块方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是lambda表达式？它有什么好处？"><span class="nav-number">6.</span> <span class="nav-text">什么是lambda表达式？它有什么好处？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python里面如何拷贝一个对象？"><span class="nav-number">7.</span> <span class="nav-text">Python里面如何拷贝一个对象？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#new和init的区别"><span class="nav-number">8.</span> <span class="nav-text">new和init的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python中协程？"><span class="nav-number">9.</span> <span class="nav-text">python中协程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python的异常机制"><span class="nav-number">10.</span> <span class="nav-text">Python的异常机制?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python旧式类-经典类-和新式类的区别"><span class="nav-number">11.</span> <span class="nav-text">python旧式类(经典类)和新式类的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#classmethod，staticmethod，property是什么？有什么作用？"><span class="nav-number">12.</span> <span class="nav-text">classmethod，staticmethod，property是什么？有什么作用？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python中的绑定方法和未绑定方法是什么"><span class="nav-number">13.</span> <span class="nav-text">python中的绑定方法和未绑定方法是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python上下文管理器是什么？"><span class="nav-number">14.</span> <span class="nav-text">python上下文管理器是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#functools的wraps是做什么的？"><span class="nav-number">15.</span> <span class="nav-text">functools的wraps是做什么的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请说一说ORM实现原理"><span class="nav-number">16.</span> <span class="nav-text">请说一说ORM实现原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请说一说迭代器和生成器区别"><span class="nav-number">17.</span> <span class="nav-text">请说一说迭代器和生成器区别?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#描述一下type-的作用"><span class="nav-number">18.</span> <span class="nav-text">描述一下type()的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python中列表与元组的异同？"><span class="nav-number">19.</span> <span class="nav-text">Python中列表与元组的异同？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python中的列表是如何实现的？"><span class="nav-number">20.</span> <span class="nav-text">Python中的列表是如何实现的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python中列表的索引查询的时间复杂度是多少？"><span class="nav-number">21.</span> <span class="nav-text">Python中列表的索引查询的时间复杂度是多少？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python字典的实现原理？"><span class="nav-number">22.</span> <span class="nav-text">Python字典的实现原理？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是pickling和unpickling？"><span class="nav-number">23.</span> <span class="nav-text">什么是pickling和unpickling？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有哪些工具可以帮助debug或做静态分析？"><span class="nav-number">24.</span> <span class="nav-text">有哪些工具可以帮助debug或做静态分析？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python中的作用域？"><span class="nav-number">25.</span> <span class="nav-text">Python中的作用域？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python的参数传递是值传递还是引用传递？"><span class="nav-number">26.</span> <span class="nav-text">Python的参数传递是值传递还是引用传递？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写一个函数-输入一个字符串-返回倒序排列的结果"><span class="nav-number">27.</span> <span class="nav-text">写一个函数, 输入一个字符串, 返回倒序排列的结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python中is和-的区别"><span class="nav-number">28.</span> <span class="nav-text">python中is和==的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Python的闭包？"><span class="nav-number">29.</span> <span class="nav-text">什么是Python的闭包？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python的自省"><span class="nav-number">30.</span> <span class="nav-text">Python的自省?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python并发的解决方案"><span class="nav-number">31.</span> <span class="nav-text">Python并发的解决方案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mr.Tian</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">10.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+    Of Course I'm Only Here For You
+  </span>
+  </div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+    <script type="text/javascript" color="0,0,255" opacity="0.7" zindex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<script type="text/javascript" src="/js/src/love.js"></script>
