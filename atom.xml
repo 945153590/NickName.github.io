@@ -92,11 +92,61 @@
   </entry>
   
   <entry>
+    <title>性能测试</title>
+    <link href="http://yoursite.com/2019/05/31/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/"/>
+    <id>http://yoursite.com/2019/05/31/性能测试/</id>
+    <published>2019-05-31T10:46:00.000Z</published>
+    <updated>2019-10-31T13:27:01.661Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>一款优秀的软件不仅要具备良好的功能，还要有过硬的性能。性能测试需要基于功能测试，性能测试主要包含两个特性：时间和资源。时间指系统处理客户请求的时间，主要用响应时间和吞吐量来衡量，而资源则是指软件运行过程中系统资源消耗的情况，最尝受关注的资源包括CPU、内存、磁盘。</p><p>以在营业厅办业务为例，如果人比较少，你可能不需要排队，立马就可以办理业务，大概要5分钟就完成。如果是人比较多，前面有几个人在排队，你大概需要30分钟才办理完业务</p><pre><code>响应时间：上面的5分钟，30分钟就是响应时间。从你到达营业厅到你办理业务完成的时间，这个时间越短，性能越好 吞吐量：单位时间内办理完成的业务数，办理业务越快，吞吐量越大。即一定时间内处理的客户端请求数</code></pre><h6 id="为什么做性能测试？"><a href="#为什么做性能测试？" class="headerlink" title="为什么做性能测试？"></a>为什么做性能测试？</h6><ul><li>例如网站报错：当前访问用户过多，请稍后重试，给用户带来不好的体验，如果做性能测试的话：我们可以通过工具模拟大量用户访问，验证系统是否能够支撑预期用户量，如果不能的话，提前进行性能优化</li><li>例如网站报错：502 Bad Gateway， 系统存在性能缺陷，导致系统瘫痪，做性能测试可以识别性能缺陷，规避性能风险</li><li>系统短时间内正常，运行半年后出现错误，说明系统在长时间运行下出错，存在稳定性缺陷做性能测试可以检验产品的稳定性，保障产品长时间无故障运行。</li></ul><p>性能测试方法主要包括：性能测试、配置测试、并发测试、负载测试、压力测试、稳定性测试。</p><ul><li>性能测试：测试环境和测试目标确定的情况下，测试系统是否达到宣称的能力。</li><li>配置测试：系统具有一定的测试基础时，通过修改环境配置，例如服务器参数等，对比之前的测试结果进行优化。</li><li>并发测试：模拟多个用户并发使用系统，测试系统是否存在死锁、内存泄漏等问题。</li><li>负载测试：逐渐向系统添加压力，观察系统资源消耗情况，直到某一项资源达到极限。一般用于度量系统的性能容量，寻找系统瓶颈为系统调优提供数据。</li><li>压力测试：系统承受一定压力的情况下，测试系统是否会出现错误。系统压力包括CPU、内存、磁盘、网络等方面的压力，施加压力的方法包括利用工具占用系统资源、增加并发量等。</li><li>稳定性测试：系统承受一定压力的情况下，运行一段时间，测试系统是否能够平稳运行。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;一款优秀的软件不仅要具备良好的功能，还要有过硬的性能。性能测试需要基于功能测试，性能测试主要包含两个特性：时间和资源。时间指系统处理客户请求
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Test" scheme="http://yoursite.com/tags/Test/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>功能测试</title>
+    <link href="http://yoursite.com/2019/05/30/%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/"/>
+    <id>http://yoursite.com/2019/05/30/功能测试/</id>
+    <published>2019-05-30T13:27:00.000Z</published>
+    <updated>2019-10-31T14:29:41.488Z</updated>
+    
+    <content type="html"><![CDATA[<h6 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h6><p>功能测试也叫黑盒测试，只需要考虑测试的各个功能，不需要考虑整个软件的内部结构及代码，一般从软件产品界面、架构出发，按照需求编写出来的测试用例，输入数据在预期结果和实际结果之间进行评测，进而提出更加使产品达到用户使用的要求。</p><h6 id="基本功能验证"><a href="#基本功能验证" class="headerlink" title="基本功能验证"></a>基本功能验证</h6><p>验证每个功能是否可用，在每个界面，从上往下，从左往右依次测试每个功能。</p><h6 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h6><ul><li>等价类划分</li><li>边界值分析</li><li>错误推测</li><li>因果图</li><li>判定表驱动分析</li><li>正交实验</li><li>功能图分析</li></ul><h6 id="常见功能测试点"><a href="#常见功能测试点" class="headerlink" title="常见功能测试点"></a>常见功能测试点</h6><p>一、登录</p><p>1、空值</p><p>用户名和密码均为空，用户名填写，密码为空/用户名为空，密码填写</p><p>2、错误校验</p><p>输入错误的用户名和密码/用户名错误密码正确/用户名正确密码错误</p><p>3、大小写区分</p><p>用户名和密码均大写/用户名大写，密码小写/用户名小写，密码大写</p><p>4、空格</p><p>合法的用户名或密码前/中/后依次插入空格</p><p>5、已注销的用户名登录</p><p>6、已禁止、锁定的用户</p><p>7、长短校验</p><p>8、非法字符校验</p><p>9、多次（3次/5次）错误登录，是否锁住</p><p>10、是否支持TAB和Enter</p><p>11、多点登录/提示信息（同一用户不能在同一时间不同位置登录）</p><p>12、登录是否记住用户名和密码</p><p>13、密码明文</p><p>14、切换用户，是否显示前一用户信息</p><p>15、登录后前进后退操作</p><p>16、查看密码转码是否有规律，是否每次一样</p><p>17、密码是否可以用MD5解密</p><p>18、登录超时（经过一段时间登录自动退出）</p><p>19、SQL注入问题</p><p>20、跨站</p><p>21、Cookie注入</p><p>22、Cookie加密检查</p><p>23、提交用get方法（不安全）</p><p>二、基本功能测试</p><p>1、输入正确的用户名和密码登录成功</p><p>2、输入错误的用户名和密码登录失败</p><p>3、用户名正确，密码错误是否提示密码错误</p><p>4、用户名错误，密码正常是否提示用户名错误</p><p>5、用户名和密码都错误是否有相应提示</p><p>6、用户名密码为空是否有相应提示</p><p>7、用户未注册是否提示先注册再登录</p><p>8、已注销的用户登录失败是否提示信息友好</p><p>9、密码框是否加密显示</p><p>10、用户名是否支持中文、特殊字符，是否有长度限制</p><p>11、密码是否支持中文、特殊字符，是否有长度限制</p><p>12、用户名是否区分大小写</p><p>13、密码是否区分大小写</p><p>14、密码为一些简单的字符串时是否提示密码过于简单</p><p>15、密码存储方式，是否加密</p><p>16、登录功能是否需要验证码（验证码有效时间）/移动滑块</p><p>17、验证码/移动滑块错误，提示信息是否友好</p><p>18、验证码/移动滑块换一张是否更换，功能是否可用</p><p>19、用户体系：比如普通用户、高级用户登录后的权限是否不同</p><p>20、使用第三方登录，那么第三方账号与本系统账号体系对应关系如何保存</p><p>二、页面测试 ####</p><p>1、登录页面是否显示正常,</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h6 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h6&gt;&lt;p&gt;功能测试也叫黑盒测试，只需要考虑测试的各个功能，不需要考虑整个软件的内部结构及代码，一般从软件产品界面、架构出发，按照需求编写出来的测试用例
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Test" scheme="http://yoursite.com/tags/Test/"/>
+    
+  </entry>
+  
+  <entry>
     <title>adb的定义及主要功能</title>
     <link href="http://yoursite.com/2019/05/29/adb%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD/"/>
     <id>http://yoursite.com/2019/05/29/adb的定义及主要功能/</id>
     <published>2019-05-29T06:06:00.000Z</published>
-    <updated>2019-10-28T06:36:29.200Z</updated>
+    <updated>2019-10-31T14:27:54.960Z</updated>
     
     <content type="html"><![CDATA[<p>adb(Android Debug Bridge)是Android SDK 里的一个工具，用这个工具可以直接操作管理Android模拟器或者真实的Andriod设备（如G1手机）。它的主要功能有：</p><ul><li>运行设备的shell命令</li><li>管理模拟器或设备的端口映射</li><li>计算机呵设备之间上传/下载文件</li><li>将本地apk软件安装至模拟器或Android设备</li></ul><p>常用的adb命令有：</p><ol><li><p>查看设备 adb devices</p><p> 这个命令是查看当前连接的设备，连接到计算机的Android设备或者模拟器将会列出显示</p></li><li><p>安装软件 adb install + 安装包路径</p><p> 这个命令将指定的apk文件安装到设备上</p></li><li><p>卸载软件 adb uninstall 文件名<br>adb uninstall -k 软件名</p><p> 如果加-k参数，为卸载软件但是保留配置和缓存文件</p></li><li><p>进入设备或模拟器的shell： adb shell</p></li><li><p>从电脑上发送文件到设备 adb push 本地路径 远程路径</p><p> 用push命令可以把本机电脑上的文件或者文件夹复制到设备（手机）</p></li><li><p>从设备上下载文件到电脑 adb pull 远程路径 本地路径</p><p> 用pull命令可以把设备（手机）上的文件或者文件夹复制到本机电脑</p></li><li><p>在命令行中查看LOG信息： adb logcat</p><p> -s 标签名：查看此标签的日志</p><p> -f 文件名：将日志输出至某文件中</p><p> -v time：显示时间</p><p> -c：情况日志</p><p> 查看E级别以上的日志：*：E</p></li><li><p>monkey命令工具：向程序发送随机事件流，测试程序的稳定性和健壮性</p><p> adb shell monkey -p package 名 -s seed 值 –throttle 毫秒（间隔时间） –ignore-crashes –ignore-timeouts –pct-touch 50 –pct-motion 50 -v 200</p></li><li><p>获取设备的ID和序列号：</p><p>  adb get-product —-</p><p> adb get-serialno — 获取设备的序列号</p><p> adb get-state — 模拟器/设备的当前状态</p></li><li><p>查看CPU硬件的相关信息</p><p>adb shell cat /proc/cpuinfo</p></li><li><p>查看内存的相关信息</p><p>adb shell cat /proc/meminfo</p></li><li><p>查看I/O内存分区的相关信息</p><p>adb shell cat /proc/iomem</p></li><li><p>获取手机型号</p><p>adb shell cat /system/bulid.prop | findstr “ro.product.model”</p></li><li><p>获取电池电量的相关信息</p><p>adb shell dumpsys battery</p></li></ol>]]></content>
     
@@ -115,7 +165,7 @@
       <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="test" scheme="http://yoursite.com/tags/test/"/>
+      <category term="Test" scheme="http://yoursite.com/tags/Test/"/>
     
   </entry>
   
