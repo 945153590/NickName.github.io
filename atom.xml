@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-21T07:24:53.391Z</updated>
+  <updated>2020-04-03T06:20:27.954Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常用测试方法</title>
+    <link href="http://yoursite.com/2020/02/11/%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2020/02/11/黑盒测试方法简单总结/</id>
+    <published>2020-02-11T11:33:00.000Z</published>
+    <updated>2020-04-03T06:20:27.954Z</updated>
+    
+    <content type="html"><![CDATA[<p>此内容是自己简单理解的概述，具体介绍可参考百度。</p><h3 id="等价类划分"><a href="#等价类划分" class="headerlink" title="等价类划分"></a>等价类划分</h3><pre><code>#### 应用场景    只要有数据输入的地方，就可以应用等价类划分。（大量数据中可选取具有代表性数据进行测试，可提高测试效率，节约测试成本）#### 有效等价类和无效等价类    1、有效等价类：对程序有意义、合理的输入数据。        程序接收有效等价类测试数据且正确计算、执行    2、无效等价类：对程序无意义、不合理的输入数据。        程序接收无效等价类数据程序应给出错误提示、不会执行</code></pre><h3 id="边界值"><a href="#边界值" class="headerlink" title="边界值"></a>边界值</h3><pre><code>一般不会单独用到边界值，等价类和边界值结合使用设计一套完整的测试用例。边界值选取规则：根据需求取大于、小于、等于三个值设计测试用例。</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;此内容是自己简单理解的概述，具体介绍可参考百度。&lt;/p&gt;
+&lt;h3 id=&quot;等价类划分&quot;&gt;&lt;a href=&quot;#等价类划分&quot; class=&quot;headerlink&quot; title=&quot;等价类划分&quot;&gt;&lt;/a&gt;等价类划分&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;#### 应用场景
+    只要有数
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Test" scheme="http://yoursite.com/tags/Test/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS架构、BS架构</title>
+    <link href="http://yoursite.com/2020/02/10/CS%E6%9E%B6%E6%9E%84%E3%80%81BS%E6%9E%B6%E6%9E%84/"/>
+    <id>http://yoursite.com/2020/02/10/CS架构、BS架构/</id>
+    <published>2020-02-10T12:46:00.000Z</published>
+    <updated>2020-04-03T05:40:22.422Z</updated>
+    
+    <content type="html"><![CDATA[<p>此内容是自己简单理解的概述，具体介绍可参考百度。</p><h3 id="CS架构"><a href="#CS架构" class="headerlink" title="CS架构"></a>CS架构</h3><pre><code>客户机-服务器（Client-Server），服务器负责数据的管理，客户机完成与用户的交互任务。客户机通过局域网接收用户的请求，并通过网络向服务器发出请求，对数据库进行操作。服务器接收到请求后，将正确的数据发送给客户机，客户机将数据将结算结果呈现给用户。它的主要特点是：交互性强、具有安全的存储模式、响应速度快、网络通信量低、利于处理大量数据。但是该架构是针对性开发，变更不灵活、不利于扩展，不能实现快速的部署安装和配置、维护和升级成本高。</code></pre><h3 id="BS架构"><a href="#BS架构" class="headerlink" title="BS架构"></a>BS架构</h3><pre><code>浏览器-服务器（Browser-Server）,服务器负责数据的管理，浏览器完成与用户的交互任务。客户机只需安装一个浏览器，浏览器通过服务器同数据库进行交互并返回正确的数据。它的主要特点是：分布性强、便于维护、成本低、开发简单且共享性强。缺点：数据安全性、对服务器要求过高，数据传输速度慢等。</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;此内容是自己简单理解的概述，具体介绍可参考百度。&lt;/p&gt;
+&lt;h3 id=&quot;CS架构&quot;&gt;&lt;a href=&quot;#CS架构&quot; class=&quot;headerlink&quot; title=&quot;CS架构&quot;&gt;&lt;/a&gt;CS架构&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;客户机-服务器（Client-Server）
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Test" scheme="http://yoursite.com/tags/Test/"/>
+    
+  </entry>
   
   <entry>
     <title>关于Python工程师的面试题（三）</title>
